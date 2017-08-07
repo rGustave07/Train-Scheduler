@@ -1,0 +1,18 @@
+
+.jumbotron{
+  text-align: center;
+}
+
+.form-group{
+  padding: 15px;
+}
+
+a{
+  position: relative;
+  top: 10px;
+  left: 25px;
+}
+
+#tableheadrow{
+  border-bottom: 2px solid;
+}

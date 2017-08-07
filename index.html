@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Train Schedule</title>
+    <!-- Linking CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Linking Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="jumbotron">
+          <h1>Train Scheduler</h1>
+          <p>Updated in Real Time</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Schedule</div>
+
+          <!-- Table -->
+          <table class="table traintable">
+            <tr id="tableheadrow">
+              <th>Train Name</th>
+              <th>Destination</th>
+              <th>Frequency(min)</th>
+              <th>Next Arrival</th>
+              <th>Minutes Away</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="panel panel-default">
+          <div class="panel-heading">Add train to Schedule.</div>
+          <div class="panel-body">
+            <!-- Panel content / input -->
+            <div class="form-group">
+              <label for="inputTrainName" class="col-lg-2 control-label">Train Name</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputTrainName" placeholder="Train Name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputDestination" class="col-lg-2 control-label">Destination</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputDestination" placeholder="Destination">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputFirstTrainTime" class="col-lg-2 control-label">First Train Time</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputFirstTrainTime" placeholder="Time E.G: (15:00)">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputFrequency" class="col-lg-2 control-label">Frequency</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputFrequency" placeholder="Frequency (mins/stop E.G: 15)">
+              </div>
+            </div>
+
+            <a class="btn btn-primary btn-lg" id="submitButton">Submit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linking Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <!-- Linking jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Linking Javascript -->
+  <script type="text/javascript" src="assets/logic.js"></script>
+  <!-- Linking Moment.js -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  </body>
+</html>
