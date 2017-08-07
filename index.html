@@ -28,15 +28,21 @@
           <div class="panel-heading">Schedule</div>
 
           <!-- Table -->
-          <table class="table traintable">
-            <tr id="tableheadrow">
-              <th>Train Name</th>
-              <th>Destination</th>
-              <th>Frequency(min)</th>
-              <th>Next Arrival</th>
-              <th>Minutes Away</th>
-            </tr>
+          <table class="table">
+            <thead>
+              <tr id="tableheadrow">
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency(min)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody class="traintable">
+
+            </tbody>
           </table>
+
         </div>
       </div>
     </div>
@@ -49,35 +55,39 @@
           <div class="panel-heading">Add train to Schedule.</div>
           <div class="panel-body">
             <!-- Panel content / input -->
-            <div class="form-group">
-              <label for="inputTrainName" class="col-lg-2 control-label">Train Name</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputTrainName" placeholder="Train Name">
+            <form>
+              <div class="form-group">
+                <label for="inputTrainName" class="col-lg-2 control-label">Train Name</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputTrainName" placeholder="Train Name">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="inputDestination" class="col-lg-2 control-label">Destination</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputDestination" placeholder="Destination">
+              <div class="form-group">
+                <label for="inputDestination" class="col-lg-2 control-label">Destination</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputDestination" placeholder="Destination">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="inputFirstTrainTime" class="col-lg-2 control-label">First Train Time</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputFirstTrainTime" placeholder="Time E.G: (15:00)">
+              <div class="form-group">
+                <label for="inputFirstTrainTime" class="col-lg-2 control-label">First Train Time</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputFirstTrainTime" placeholder="Time E.G: (0500)">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="inputFrequency" class="col-lg-2 control-label">Frequency</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputFrequency" placeholder="Frequency (mins/stop E.G: 15)">
+              <div class="form-group">
+                <label for="inputFrequency" class="col-lg-2 control-label">Frequency</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputFrequency" placeholder="Frequency (mins/stop E.G: 15)">
+                </div>
               </div>
-            </div>
 
-            <a class="btn btn-primary btn-lg" id="submitButton">Submit</a>
+              <a class="btn btn-primary btn-lg" id="submitButton">Submit</a>
+
+
+            </form>
           </div>
         </div>
       </div>

@@ -31,29 +31,32 @@ $('#submitButton').on('click', function() {
     Freq: trnFreq
   });
 
+  $('#inputTrainName').val("");
+  $('#inputDestination').val("");
+  $('#inputFirstTrainTime').val("");
+  $('#inputFrequency').val("");
+
+});
+
   // Calculating train stats
   database.ref().on("child_added", function(childSnapshot){
-    var snap = childSnapshot.val();
+    var trainName = childSnapshot.val().trainName;
     // console.log(snap); This yields the the object
-    var trainFreq = snap.Freq;
-    var trainTime = snap.firstTrainTime;
-    var trainTimeConverted = moment(trainTime, "HH:mm").format("X");
+    var trainFreq = childSnapshot.val().Freq;
+    var trainTime = childSnapshot.val().firstTrainTime;
+    var trainDest = childSnapshot.val().dest;
 
     var timeDiff = moment().diff(moment.unix(trainTime), "minutes");
-    console.log("time difference: ", timeDiff);
-    var tRemainder = moment().diff(moment.unix(traintime)) % trainFreq;
+    var tRemainder = moment().diff(moment.unix(trainTime), "minutes") % trainFreq;
+    var timeMinutes = trainFreq - tRemainder;
+    var arrival = moment().add(timeMinutes, "m").format("hh:mm A");
+    //displaying the contents
 
-
-  });
-
-  //displaying the contents
-
-  $('.traintable').append(  "<tr>" +
-    "<td>" + trnName     + "</td>" +
-    "<td>" + destination + "</td>" +
-    "<td>" + trnFreq     + "</td>" +
-    "<td>" + nxtArrival  + "</td>" +
-    "<td>" + minAway     + "</td>" + "</tr>"
+    $('.traintable').append( "<tr>" +
+    "<td>" + trainName  + "</td>" +
+    "<td>" + trainDest + "</td>" +
+    "<td>" + trainFreq     + "</td>" +
+    "<td>" + arrival  + "</td>" +
+    "<td>" + timeMinutes + "</td>" + "</tr>"
   );
-
 });
