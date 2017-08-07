@@ -38,12 +38,7 @@ $('#submitButton').on('click', function() {
   var freq = parseInt(trnFreq);
   var firstStop = trnTime;
 
-  var convertedFirstTime = moment(firstStop, "hh:mm").subtract(1,"years");
-  var currentTime = moment();
-  console.log("Current Time:" + moment(currentTime).format("hh:mm"));
-
-  var diffTime = moment().diff(moment.unix(convertedFirstTime), "minutes");
-  console.log("difference in Time: " + diffTime);
+  
   //displaying the contents
 
   $('.traintable').append(  "<tr>" +
