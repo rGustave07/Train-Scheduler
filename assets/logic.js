@@ -32,13 +32,19 @@ $('#submitButton').on('click', function() {
   });
 
   // Calculating train stats
-  var nxtArrival;
-  var minAway;
+  database.ref().on("child_added", function(childSnapshot){
+    var snap = childSnapshot.val();
+    // console.log(snap); This yields the the object
+    var trainFreq = snap.Freq;
+    var trainTime = snap.firstTrainTime;
+    var trainTimeConverted = moment(trainTime, "HH:mm").format("X");
 
-  var freq = parseInt(trnFreq);
-  var firstStop = trnTime;
+    var timeDiff = moment().diff(moment.unix(trainTime), "minutes");
+    console.log("time difference: ", timeDiff);
 
-  
+    
+  });
+
   //displaying the contents
 
   $('.traintable').append(  "<tr>" +
