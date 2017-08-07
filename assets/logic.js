@@ -20,7 +20,7 @@ $('#submitButton').on('click', function() {
   // Store values in variables to push to database
   var trnName = $('#inputTrainName').val();
   var destination = $('#inputDestination').val();
-  var trnTime = $('#inputFirstTrainTime').val();
+  var trnTime = moment($('#inputFirstTrainTime').val().trim(), "HH:mm").format("X");
   var trnFreq = $('#inputFrequency').val();
 
   // calling our database ref variable in order to push to firebase db
@@ -41,8 +41,9 @@ $('#submitButton').on('click', function() {
 
     var timeDiff = moment().diff(moment.unix(trainTime), "minutes");
     console.log("time difference: ", timeDiff);
+    var tRemainder = moment().diff(moment.unix(traintime)) % trainFreq;
 
-    
+
   });
 
   //displaying the contents
